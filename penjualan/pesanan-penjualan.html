@@ -213,7 +213,7 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="penjualan/pesanan-penjualan.html" class="nav-link">
+                    <a href="penjualan/pesanan-penjualan.html" class="nav-link active">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Pesanan Penjualan</p>
                     </a>
@@ -349,12 +349,14 @@
           <div class="col-12">
 
             <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">DataTable with default features</h3>
+              <div class="card-header d-flex">
+                <h3 class="card-title col-sm-6 ">Pesanan Penjualan</h3>
+                <input class="btn btn-success col-sm-2 ml-auto" type="button" value="Tambah">
+                <i class="nav-icon fas fa-circle-plus"></i>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <table id="example1" class="table table-bordered table-striped">
+                <table id="example" class="table table-striped table-bordered table-responsive">
                     <thead>
                         <tr>
                             <th>No.</th>
@@ -458,5 +460,11 @@
     });
   });
 </script>
+<script>
+    $(document).ready(function() {
+        $('#example').DataTable();
+    });
+</script>
+
 </body>
 </html>
