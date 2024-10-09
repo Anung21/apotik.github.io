@@ -10,10 +10,9 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <!-- DataTables -->
-  <link rel="stylesheet" href="../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-  <link rel="stylesheet" href="../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-  <link rel="stylesheet" href="../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+  <!-- DataTables CSS -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../dist/css/adminlte.min.css">
 </head>
@@ -195,8 +194,8 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
               <!-- Add icons to the links using the .nav-icon class
                  with font-awesome or any other icon font library -->
-                 <li class="nav-item menu-open">
-                  <a href="../dashboard.html" class="nav-link active">
+                 <li class="nav-item">
+                  <a href="../dashboard.html" class="nav-link">
                     <i class="nav-icon fas fa-chart-line"></i>                  
                       <p>
                       DASHBOARD
@@ -272,7 +271,7 @@
                   </li>
                 </ul>
               </li>
-              <li class="nav-item">
+              <li class="nav-item menu-open">
                 <a href="#" class="nav-link">
                   <i class="nav-icon fas fa-address-book"></i>
                   <p>
@@ -290,12 +289,12 @@
                   <li class="nav-item">
                     <a href="sales.html" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
-                      <p>Pelayan</p>
+                      <p>Sales</p>
                     </a>
                   </li>
                   <li class="nav-item">
                     <a href="dokter.html" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
+                      <i class="fas fa-circle nav-icon"></i>
                       <p>Dokter</p>
                     </a>
                   </li>
@@ -330,12 +329,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>DataTables</h1>
+            <h1>Kontak Dokter</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">DataTables</li>
+              <li class="breadcrumb-item active">Kontak Dokter</li>
             </ol>
           </div>
         </div>
@@ -350,7 +349,9 @@
 
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">DataTable with default features</h3>
+                <button class="btn btn-success col-sm-2 ml-auto" >
+                  <i class="nav-icon fas fa-circle-plus mr-2"></i> Tambah
+                </button>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -358,16 +359,10 @@
                     <thead>
                         <tr>
                             <th>No.</th>
-                            <th>Tanggal</th>
-                            <th>No Pesanan</th>
-                            <th>kanal</th>
-                            <th>Pelanggan</th>
-                            <th>Produk</th>
-                            <th>Status Order</th>
-                            <th>Status Bayar</th>
-                            <th>Status Kirim</th>
-                            <th>Total</th>
-                            <th>Pendapatan</th>
+                            <th>Nama Dokter</th>
+                            <th>Alamat Email</th>
+                            <th>No Telp/HP</th>
+                            <th>Alamat</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -378,13 +373,10 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td>
+                              <a class="btn btn-success" href="#" >Ubah</a> | 
+                              <a class="btn btn-danger" href="#" onclick="return confirm('yakin hapus?')">Hapus</a>				       
+                              </td>
                         </tr>
                     </tbody>
                 </table>
@@ -456,6 +448,11 @@
       "autoWidth": false,
       "responsive": true,
     });
+  });
+</script>
+<script>
+  $(document).ready(function() {
+      $('#example').DataTable();
   });
 </script>
 </body>
